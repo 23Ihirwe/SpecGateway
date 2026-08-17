@@ -1,4 +1,4 @@
-# ![SpecGateway]
+# [SpecGateway]
 
 ---
 
