@@ -3764,6 +3764,60 @@ select:focus {
 .results-main {
     overflow: hidden;
 }
+/* ============================================================
+   RESULTS PAGE — TYPOGRAPHY ONLY
+   No background or colour changes
+============================================================ */
+
+.results-page h2 {
+    max-width: 900px;
+
+    margin-top: 1.4rem;
+    margin-bottom: 1.5rem;
+
+    font-size: clamp(
+        2.6rem,
+        5vw,
+        5.5rem
+    );
+
+    line-height: 1;
+
+    letter-spacing: -0.045em;
+
+    font-weight: 700;
+}
+
+.results-page h2 em {
+    font-size: .92em;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: -0.025em;
+}
+
+.results-page .section-number {
+    font-size: .75rem;
+
+    line-height: 1.4;
+
+    letter-spacing: .18em;
+}
+
+.results-page .section-intro,
+.results-page section p {
+    max-width: 680px;
+
+    font-size: clamp(
+        1rem,
+        1.3vw,
+        1.15rem
+    );
+
+    line-height: 1.65;
+}
 
 
 /*CELEBRATION CANVAS */

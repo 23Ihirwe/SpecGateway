@@ -1973,9 +1973,311 @@ if (scenarioVideo) {
     let pausedOnce = false;
 
     const scenarioOptions =
-        document.querySelectorAll(
-            ".scenario-option input"
+    document.querySelectorAll(
+        '.question-section[data-question="7"] .scenario-option input'
+    );
+    const campusBriefingAudio =
+    document.getElementById(
+        "campusBriefingAudio"
+    );
+
+const audioPlayBtn =
+    document.getElementById(
+        "audioPlayBtn"
+    );
+
+const audioPauseBtn =
+    document.getElementById(
+        "audioPauseBtn"
+    );
+
+const audioReplayBtn =
+    document.getElementById(
+        "audioReplayBtn"
+    );
+
+const audioProgressFill =
+    document.getElementById(
+        "audioProgressFill"
+    );
+
+const audioCurrentTime =
+    document.getElementById(
+        "audioCurrentTime"
+    );
+
+const audioDuration =
+    document.getElementById(
+        "audioDuration"
+    );
+
+const audioStatusText =
+    document.getElementById(
+        "audioStatusText"
+    );
+    /* ================================================
+   Q5 AUDIO BRIEFING
+   Custom play, pause and replay controls
+================================================ */
+
+if (campusBriefingAudio) {
+
+    function formatAudioTime(seconds) {
+
+        if (!Number.isFinite(seconds)) {
+            return "0:00";
+        }
+
+        const minutes =
+            Math.floor(seconds / 60);
+
+        const remainingSeconds =
+            Math.floor(seconds % 60);
+
+        return (
+            minutes +
+            ":" +
+            String(remainingSeconds)
+                .padStart(2, "0")
         );
+    }
+
+
+    /* Show audio duration */
+
+    campusBriefingAudio.addEventListener(
+        "loadedmetadata",
+        () => {
+
+            if (audioDuration) {
+
+                audioDuration.textContent =
+                    formatAudioTime(
+                        campusBriefingAudio.duration
+                    );
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       PLAY
+    ========================= */
+
+    audioPlayBtn?.addEventListener(
+        "click",
+        async () => {
+
+            try {
+
+                await campusBriefingAudio.play();
+
+                if (audioStatusText) {
+
+                    audioStatusText.textContent =
+                        "Briefing playing";
+
+                }
+
+            } catch (error) {
+
+                console.error(
+                    "Audio play failed:",
+                    error
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       PAUSE
+    ========================= */
+
+    audioPauseBtn?.addEventListener(
+        "click",
+        () => {
+
+            campusBriefingAudio.pause();
+
+            if (audioStatusText) {
+
+                audioStatusText.textContent =
+                    "Briefing paused";
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       REPLAY
+    ========================= */
+
+    audioReplayBtn?.addEventListener(
+        "click",
+        async () => {
+
+            try {
+
+                campusBriefingAudio.pause();
+
+                campusBriefingAudio.currentTime = 0;
+
+
+                if (audioCurrentTime) {
+
+                    audioCurrentTime.textContent =
+                        "0:00";
+
+                }
+
+
+                if (audioProgressFill) {
+
+                    audioProgressFill.style.width =
+                        "0%";
+
+                }
+
+
+                if (audioStatusText) {
+
+                    audioStatusText.textContent =
+                        "Briefing replaying";
+
+                }
+
+
+                await campusBriefingAudio.play();
+
+            } catch (error) {
+
+                console.error(
+                    "Audio replay failed:",
+                    error
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       PROGRESS
+    ========================= */
+
+    campusBriefingAudio.addEventListener(
+        "timeupdate",
+        () => {
+
+            if (audioCurrentTime) {
+
+                audioCurrentTime.textContent =
+                    formatAudioTime(
+                        campusBriefingAudio.currentTime
+                    );
+
+            }
+
+
+            if (
+                audioProgressFill &&
+                Number.isFinite(
+                    campusBriefingAudio.duration
+                ) &&
+                campusBriefingAudio.duration > 0
+            ) {
+
+                const percentage =
+                    (
+                        campusBriefingAudio.currentTime /
+                        campusBriefingAudio.duration
+                    ) * 100;
+
+
+                audioProgressFill.style.width =
+                    percentage + "%";
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       AUDIO FINISHED
+    ========================= */
+
+    campusBriefingAudio.addEventListener(
+        "ended",
+        () => {
+
+            /*
+                Return to the beginning so
+                Replay works immediately.
+            */
+
+            campusBriefingAudio.currentTime = 0;
+
+
+            if (audioCurrentTime) {
+
+                audioCurrentTime.textContent =
+                    "0:00";
+
+            }
+
+
+            if (audioProgressFill) {
+
+                audioProgressFill.style.width =
+                    "0%";
+
+            }
+
+
+            if (audioStatusText) {
+
+                audioStatusText.textContent =
+                    "Briefing complete — Replay or choose your response";
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       AUDIO LOAD ERROR
+    ========================= */
+
+    campusBriefingAudio.addEventListener(
+        "error",
+        () => {
+
+            if (audioStatusText) {
+
+                audioStatusText.textContent =
+                    "Audio could not be loaded";
+
+            }
+
+
+            console.error(
+                "Question 5 audio failed to load. Check assets/audio/campus-project-briefing.mp3"
+            );
+
+        }
+    );
+
+}
 
     /*
         Answers stay locked until the
