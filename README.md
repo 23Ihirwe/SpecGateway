@@ -1,14 +1,4 @@
-# ![SpecGateway](https://img.shields.io/badge/SpecGateway-8B5CF6?style=for-the-badge&logo=code&logoColor=white)
-
-### Explore how you think. Discover where it could take you.
-
-An interactive **BSE Specialisation Advisor** designed to help incoming Software Engineering students reflect on their interests, strengths and problem-solving preferences before choosing a direction for their Learning Journey Plan.
-
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Canvas](https://img.shields.io/badge/HTML5-Canvas-8B5CF6?style=flat-square)
-![Responsive](https://img.shields.io/badge/Design-Responsive-22C55E?style=flat-square)
+# ![SpecGateway]
 
 ---
 
@@ -574,8 +564,7 @@ npx serve
 4. If you are using the Python server, visit:
 
 ```text
-http://localhost:8000
-```
+http://127.0.0.1:5500/SpecGateway/quiz.html```
 
 You can also run SpecGateway directly from **Visual Studio Code** using the **Live Server** extension.
 
@@ -675,6 +664,19 @@ Special thanks to:
 - **MDN Web Docs** for browser API and web-development documentation
 - **Canva** for the design environment used to create the SpecGateway logo
 - Students and peers who test the application and provide feedback on the experience
+
+---
+# ![SpecGateway](https://img.shields.io/badge/SpecGateway-8B5CF6?style=for-the-badge&logo=code&logoColor=white)
+
+### Explore how you think. Discover where it could take you.
+
+An interactive **BSE Specialisation Advisor** designed to help incoming Software Engineering students reflect on their interests, strengths and problem-solving preferences before choosing a direction for their Learning Journey Plan.
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Canvas](https://img.shields.io/badge/HTML5-Canvas-8B5CF6?style=flat-square)
+![Responsive](https://img.shields.io/badge/Design-Responsive-22C55E?style=flat-square)
 
 ---
 

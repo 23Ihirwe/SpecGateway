@@ -573,29 +573,74 @@ em {
     position: relative;
     width: 360px;
     height: 360px;
+
+    perspective: 900px;
+    transform-style: preserve-3d;
+
+    cursor: crosshair;
+
+    transition: transform .16s ease-out;
 }
 
 .xr-ring {
     position: absolute;
+
     border: 1px solid var(--cyan);
     border-radius: 50%;
+
     inset: 20px;
+
+    pointer-events: none;
+
+    transition:
+        transform .15s ease-out,
+        box-shadow .25s ease;
 }
 
 .xr-ring-two {
     inset: 90px;
+
     border-color: var(--violet);
 }
 
 .xr-dot {
     position: absolute;
-    width: 18px;
-    height: 18px;
+
+    width: 22px;
+    height: 22px;
+
     border-radius: 50%;
+
     background: #fff;
+
     left: 50%;
     top: 50%;
-    box-shadow: 0 0 35px var(--cyan);
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+
+    box-shadow:
+        0 0 16px #fff,
+        0 0 42px var(--cyan),
+        0 0 70px rgba(179, 156, 255, .45);
+
+    transition:
+        left .08s linear,
+        top .08s linear;
+}
+
+.visual-xr-space.is-active .xr-ring {
+    box-shadow:
+        0 0 50px
+        rgba(134, 232, 255, .22);
+}
+
+.visual-xr-space.is-active .xr-ring-two {
+    box-shadow:
+        0 0 45px
+        rgba(179, 156, 255, .26);
 }
 
 
@@ -1974,26 +2019,31 @@ select:focus {
 
     background:
         radial-gradient(
-            circle at 12% 18%,
-            rgba(165, 43, 63, .18),
-            transparent 34%
+            circle at 10% 15%,
+            rgba(179, 156, 255, .28),
+            transparent 32%
         ),
         radial-gradient(
-            circle at 88% 42%,
-            rgba(109, 31, 46, .13),
+            circle at 88% 25%,
+            rgba(134, 232, 255, .18),
             transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 70% 85%,
+            rgba(209, 74, 97, .14),
+            transparent 34%
         ),
         linear-gradient(
             135deg,
-            #100c10,
-            #181015 48%,
-            #0d0b0e
+            #19152b,
+            #102039 50%,
+            #28192d
         );
 
     color: var(--text);
     overflow-x: hidden;
 }
-
 
 /* QUIZ CANVAS */
 
@@ -3687,21 +3737,26 @@ select:focus {
 
     background:
         radial-gradient(
-            circle at 12% 18%,
-            rgba(209, 74, 97, .14),
+            circle at 8% 14%,
+            rgba(179, 156, 255, .26),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 24%,
+            rgba(134, 232, 255, .18),
             transparent 30%
         ),
         radial-gradient(
-            circle at 88% 40%,
-            rgba(122, 33, 51, .11),
-            transparent 30%
+            circle at 74% 82%,
+            rgba(209, 74, 97, .15),
+            transparent 34%
         ),
-        radial-gradient(
-            circle at 50% 82%,
-            rgba(255, 121, 111, .05),
-            transparent 35%
-        ),
-        #080708;
+        linear-gradient(
+            145deg,
+            #18142c,
+            #102237 48%,
+            #29182e
+        );
 
     color: var(--text);
 }
@@ -4066,9 +4121,24 @@ select:focus {
 
     border-bottom:
         1px solid
-        var(--line);
+        rgba(255, 255, 255, .10);
 
-    background: #050506;
+    background:
+        radial-gradient(
+            circle at 78% 38%,
+            rgba(134, 232, 255, .13),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 18% 72%,
+            rgba(179, 156, 255, .17),
+            transparent 32%
+        ),
+        linear-gradient(
+            125deg,
+            rgba(38, 28, 63, .96),
+            rgba(17, 43, 61, .94)
+        );
 }
 
 .results-hero::before {
@@ -4364,7 +4434,22 @@ select:focus {
         1px solid
         rgba(255, 255, 255, .10);
 
-    background: #050506;
+    background:
+        radial-gradient(
+            circle at 18% 25%,
+            rgba(179, 156, 255, .20),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 82% 72%,
+            rgba(134, 232, 255, .16),
+            transparent 34%
+        ),
+        linear-gradient(
+            135deg,
+            #211a39,
+            #122d42
+        );
 }
 
 
@@ -4572,13 +4657,26 @@ select:focus {
 .canvas-shell {
     position: relative;
 
-    padding: 1rem;
+    padding: 2rem;
 
     border:
         1px solid
-        var(--line);
+        rgba(134, 232, 255, .24);
 
-    background: #050506;
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(42, 32, 67, .82),
+            rgba(17, 45, 64, .76)
+        );
+
+    box-shadow:
+        0 28px 80px
+        rgba(3, 5, 18, .28);
+
+    backdrop-filter: blur(18px);
 
     overflow: hidden;
 }

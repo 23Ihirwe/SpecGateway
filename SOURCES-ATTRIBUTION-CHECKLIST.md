@@ -60,6 +60,64 @@ The SpecGateway logo was designed specifically for this project using Canva.
 
 The design was created to give SpecGateway its own visual identity and is used throughout the application as the main project branding.
 
+##  System Failure Video
+
+**Local file:**  
+`assets/video/system-failure-scenario.mp4`
+
+**Source:**  
+Pixabay
+
+**Creator:**  
+voltamax
+
+**Source URL:**  
+https://pixabay.com/videos/code-programming-system-failure-14214/
+
+**Licence:**  
+Pixabay Content License
+
+**Use in SpecGateway:**  
+Used in Question 7 of the assessment as an interactive real-world system
+failure scenario.
+
+The video is presented using the HTML5 `<video>` element. JavaScript monitors
+the video's playback time and automatically pauses the scenario at a programmed
+point before the student chooses what they would investigate first.
+
+This media interaction helps assess the student's problem-solving instincts
+across Low-Level Programming, AR/VR, Full-Stack Web Development, and Machine
+Learning.
+
+
+## Question 5 — Audio Briefing
+
+**Local file:**  
+`assets/audio/campus-project-briefing.mp3`
+
+**Generated using:**  
+TTSMaker
+
+**Source URL:**  
+https://ttsmaker.com/
+
+**Content created for SpecGateway:**  
+The spoken script was written specifically for the SpecGateway assessment and converted into speech using TTSMaker's text-to-speech service.
+
+**Audio script:**  
+“Your team is building a smart campus navigation system. Students need to move through the campus easily, receive useful information in real time, and get recommendations based on how they use the system. The application must also remain fast and reliable as more students begin using it. Your team asks you to take ownership of one part of the challenge. Which part would you choose?”
+
+**Use in SpecGateway:**  
+Used in Question 5 of the BSE Specialisation Advisor as an interactive audio-based assessment scenario.
+
+Students listen to the project briefing before deciding which part of the challenge they would most naturally take responsibility for. Their response contributes a signal toward one of the four BSE specialisations: Low-Level Programming, AR/VR, Full-Stack Web Development, or Machine Learning.
+
+The audio is integrated using the HTML5 `<audio>` element together with custom JavaScript controls for play, pause, replay and playback progress.
+
+**AI / Digital Tool Disclosure:**  
+TTSMaker was used only to convert the original written assessment script into spoken audio. The scenario, question structure and pathway response options were created specifically for the SpecGateway project.
+
+
 # Technical References
 
 Official web documentation was consulted while developing and reviewing some of the browser features used in SpecGateway.

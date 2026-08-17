@@ -929,214 +929,290 @@
                  WORD RESONANCE
             ================================================== -->
 
-            <section
-                class="question-section"
-                data-question="5"
-                data-type="single"
+            <!-- =================================================
+     QUESTION 5
+     AUDIO-BASED SCENARIO
+================================================== -->
+
+<section
+    class="question-section"
+    data-question="5"
+    data-type="single"
+>
+    <div class="question-container">
+
+        <div class="question-header">
+
+            <span class="question-number">
+                05
+            </span>
+
+            <span class="question-category">
+                Audio Briefing
+            </span>
+
+        </div>
+
+
+        <h2 class="question-text">
+            Listen to the project briefing before choosing
+            which responsibility you would naturally take.
+        </h2>
+
+
+        <p class="question-hint">
+            Use the controls below to play, pause or replay the briefing.
+        </p>
+
+
+        <!-- AUDIO PLAYER -->
+
+        <div class="audio-scenario-shell">
+
+            <audio
+                id="campusBriefingAudio"
+                preload="metadata"
+            >
+                <source
+                    src="assets/audio/campus-project-briefing.mp3"
+                    type="audio/mpeg"
+                >
+
+                Your browser does not support HTML5 audio.
+            </audio>
+
+
+            <div class="audio-status">
+
+                <span class="audio-status-label">
+                    // AUDIO BRIEFING
+                </span>
+
+                <strong id="audioStatusText">
+                    Ready to listen
+                </strong>
+
+            </div>
+
+
+            <div class="audio-controls">
+
+                <button
+                    type="button"
+                    class="audio-control-btn"
+                    id="audioPlayBtn"
+                >
+                    ▶
+                    <span>Play</span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="audio-control-btn"
+                    id="audioPauseBtn"
+                >
+                    ❚❚
+                    <span>Pause</span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="audio-control-btn"
+                    id="audioReplayBtn"
+                >
+                    ↻
+                    <span>Replay</span>
+                </button>
+
+            </div>
+
+
+            <div class="audio-progress">
+
+                <div class="audio-progress-track">
+
+                    <div
+                        class="audio-progress-fill"
+                        id="audioProgressFill"
+                    ></div>
+
+                </div>
+
+
+                <div class="audio-time">
+
+                    <span id="audioCurrentTime">
+                        0:00
+                    </span>
+
+                    <span id="audioDuration">
+                        0:00
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUESTION AFTER LISTENING -->
+
+        <div
+            class="audio-question"
+            id="audioQuestion"
+        >
+
+            <p class="audio-question-label">
+                // AFTER LISTENING
+            </p>
+
+            <h3>
+                Which responsibility would you choose first?
+            </h3>
+
+        </div>
+
+
+        <!-- ANSWERS -->
+
+        <div class="scenario-options audio-options">
+
+
+            <!-- LOW LEVEL -->
+
+            <label
+                class="scenario-option"
+                data-spec="lowlevel"
             >
 
-                <div class="question-container">
+                <input
+                    type="radio"
+                    name="q5"
+                    value="lowlevel"
+                    required
+                >
 
+                <div class="scenario-content">
 
-                    <div class="question-header">
+                    <span class="scenario-letter">
+                        A
+                    </span>
 
-                        <span class="question-number">
-                            05
-                        </span>
-
-                        <span class="question-category">
-                            Word Resonance
-                        </span>
-
-                    </div>
-
-
-                    <h2 class="question-text">
-                        Which cluster feels most like the kind of problems
-                        you could spend years becoming excellent at?
-                    </h2>
-
-
-                    <p class="question-hint">
-                        Respond to the whole cluster, not just one word.
-                    </p>
-
-
-                    <div class="word-cloud-options">
-
-
-                        <label
-                            class="word-cloud-option"
-                            data-spec="lowlevel"
-                        >
-
-                            <input
-                                type="radio"
-                                name="q5"
-                                value="lowlevel"
-                                required
-                            >
-
-                            <div class="word-cluster">
-
-                                <span class="word primary">
-                                    CONTROL
-                                </span>
-
-                                <span class="word">
-                                    Latency
-                                </span>
-
-                                <span class="word">
-                                    Memory
-                                </span>
-
-                                <span class="word">
-                                    Precision
-                                </span>
-
-                                <span class="word">
-                                    Execution
-                                </span>
-
-                            </div>
-
-                        </label>
-
-
-
-                        <label
-                            class="word-cloud-option"
-                            data-spec="arvr"
-                        >
-
-                            <input
-                                type="radio"
-                                name="q5"
-                                value="arvr"
-                                required
-                            >
-
-                            <div class="word-cluster">
-
-                                <span class="word primary">
-                                    PRESENCE
-                                </span>
-
-                                <span class="word">
-                                    Space
-                                </span>
-
-                                <span class="word">
-                                    Motion
-                                </span>
-
-                                <span class="word">
-                                    Perception
-                                </span>
-
-                                <span class="word">
-                                    Interaction
-                                </span>
-
-                            </div>
-
-                        </label>
-
-
-
-                        <label
-                            class="word-cloud-option"
-                            data-spec="fullstack"
-                        >
-
-                            <input
-                                type="radio"
-                                name="q5"
-                                value="fullstack"
-                                required
-                            >
-
-                            <div class="word-cluster">
-
-                                <span class="word primary">
-                                    PRODUCT
-                                </span>
-
-                                <span class="word">
-                                    Users
-                                </span>
-
-                                <span class="word">
-                                    Services
-                                </span>
-
-                                <span class="word">
-                                    Scale
-                                </span>
-
-                                <span class="word">
-                                    Delivery
-                                </span>
-
-                            </div>
-
-                        </label>
-
-
-
-                        <label
-                            class="word-cloud-option"
-                            data-spec="ml"
-                        >
-
-                            <input
-                                type="radio"
-                                name="q5"
-                                value="ml"
-                                required
-                            >
-
-                            <div class="word-cluster">
-
-                                <span class="word primary">
-                                    SIGNAL
-                                </span>
-
-                                <span class="word">
-                                    Data
-                                </span>
-
-                                <span class="word">
-                                    Patterns
-                                </span>
-
-                                <span class="word">
-                                    Evidence
-                                </span>
-
-                                <span class="word">
-                                    Prediction
-                                </span>
-
-                            </div>
-
-                        </label>
-
-                    </div>
-
-
-                    <p
-                        class="validation-error"
-                        id="error-q5"
-                    >
-                        Choose the cluster that resonates most.
+                    <p>
+                        Improve memory use, processing efficiency
+                        and communication with the underlying hardware.
                     </p>
 
                 </div>
 
-            </section>
+            </label>
 
+
+            <!-- AR / VR -->
+
+            <label
+                class="scenario-option"
+                data-spec="arvr"
+            >
+
+                <input
+                    type="radio"
+                    name="q5"
+                    value="arvr"
+                    required
+                >
+
+                <div class="scenario-content">
+
+                    <span class="scenario-letter">
+                        B
+                    </span>
+
+                    <p>
+                        Design an immersive navigation experience
+                        that helps students understand and interact
+                        with their surroundings.
+                    </p>
+
+                </div>
+
+            </label>
+
+
+            <!-- FULL STACK -->
+
+            <label
+                class="scenario-option"
+                data-spec="fullstack"
+            >
+
+                <input
+                    type="radio"
+                    name="q5"
+                    value="fullstack"
+                    required
+                >
+
+                <div class="scenario-content">
+
+                    <span class="scenario-letter">
+                        C
+                    </span>
+
+                    <p>
+                        Build the interface, APIs, authentication
+                        and data flow that connect the entire application.
+                    </p>
+
+                </div>
+
+            </label>
+
+
+            <!-- MACHINE LEARNING -->
+
+            <label
+                class="scenario-option"
+                data-spec="ml"
+            >
+
+                <input
+                    type="radio"
+                    name="q5"
+                    value="ml"
+                    required
+                >
+
+                <div class="scenario-content">
+
+                    <span class="scenario-letter">
+                        D
+                    </span>
+
+                    <p>
+                        Use student interaction data to learn patterns
+                        and generate increasingly useful recommendations.
+                    </p>
+
+                </div>
+
+            </label>
+
+        </div>
+
+
+        <p
+            class="validation-error"
+            id="error-q5"
+        >
+            Listen to the briefing and choose one responsibility.
+        </p>
+
+    </div>
+</section>
 
 
             <!-- =================================================
@@ -1433,17 +1509,22 @@
 
         <div class="quiz-video-shell">
 
-            <iframe
-                id="scenarioVideo"
-                class="scenario-video scenario-youtube"
-                src="https://www.youtube.com/embed/BHqxD9qr6Gw?rel=0"
-                title="Performance debugging in DevTools"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-            ></iframe>
+    <video
+        id="scenarioVideo"
+        class="scenario-video"
+        controls
+        playsinline
+        preload="metadata"
+    >
+        <source
+            src="assets/video/system-failure-scenario.mp4"
+            type="video/mp4"
+        >
 
-        </div>
+        Your browser does not support HTML5 video.
+    </video>
+
+</div>
 
 
         <!-- Field Scenario -->

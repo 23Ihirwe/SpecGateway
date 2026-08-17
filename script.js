@@ -1963,78 +1963,171 @@ document.addEventListener("DOMContentLoaded", () => {
         updateSkillCounter();
 
 
-        /* ================================================
-           Q7 VIDEO PAUSE
-        ================================================ */
+       /* ================================================
+   Q7 HTML5 VIDEO SCENARIO
+   Pauses the video automatically and unlocks answers
+================================================ */
 
-        if (scenarioVideo) {
+if (scenarioVideo) {
 
-            let pausedOnce =
-                false;
+    let pausedOnce = false;
 
+    const scenarioOptions =
+        document.querySelectorAll(
+            ".scenario-option input"
+        );
 
-            scenarioVideo.addEventListener(
-                "timeupdate",
-                () => {
-
-                    const duration =
-                        Number.isFinite(
-                            scenarioVideo.duration
-                        )
-                            ? scenarioVideo.duration
-                            : 10;
-
-
-                    const pauseAt =
-                        Math.min(
-                            5,
-                            duration *
-                            0.45
-                        );
+    /*
+        Answers stay locked until the
+        video reaches the scenario pause.
+    */
+    scenarioOptions.forEach((option) => {
+        option.disabled = true;
+    });
 
 
-                    if (
-                        !pausedOnce &&
-                        scenarioVideo.currentTime >=
-                            pauseAt
-                    ) {
+    /*
+        Watch the HTML5 video playback.
+    */
+    scenarioVideo.addEventListener(
+        "timeupdate",
+        () => {
 
-                        pausedOnce =
-                            true;
+            /*
+                Use the actual video duration.
+
+                The video pauses at either:
+                - 5 seconds, or
+                - 45% of the video
+
+                whichever happens first.
+            */
+            const duration =
+                Number.isFinite(
+                    scenarioVideo.duration
+                )
+                    ? scenarioVideo.duration
+                    : 10;
 
 
-                        scenarioVideo.pause();
+            const pauseAt =
+                Math.min(
+                    5,
+                    duration * 0.45
+                );
 
 
-                        if (videoPrompt) {
+            if (
+                !pausedOnce &&
+                scenarioVideo.currentTime >= pauseAt
+            ) {
 
-                            videoPrompt.hidden =
-                                false;
+                pausedOnce = true;
 
-                        }
+                scenarioVideo.pause();
 
-                    }
+
+                /*
+                    Show the question.
+                */
+                if (videoPrompt) {
+
+                    videoPrompt.innerHTML = `
+                        <span>
+                            // SCENARIO PAUSED
+                        </span>
+
+                        <strong>
+                            What do you investigate first?
+                        </strong>
+                    `;
+
+                    videoPrompt.classList.add(
+                        "video-prompt-visible"
+                    );
 
                 }
-            );
 
 
-            scenarioVideo.addEventListener(
-                "play",
-                () => {
+                /*
+                    Unlock A, B, C and D.
+                */
+                scenarioOptions.forEach(
+                    (option) => {
 
-                    if (videoPrompt) {
-
-                        videoPrompt.hidden =
-                            true;
+                        option.disabled = false;
 
                     }
+                );
 
-                }
-            );
+            }
 
         }
+    );
 
+
+    /*
+        If the student rewinds the video
+        before the pause point, reset it.
+    */
+    scenarioVideo.addEventListener(
+        "seeked",
+        () => {
+
+            const duration =
+                Number.isFinite(
+                    scenarioVideo.duration
+                )
+                    ? scenarioVideo.duration
+                    : 10;
+
+
+            const pauseAt =
+                Math.min(
+                    5,
+                    duration * 0.45
+                );
+
+
+            if (
+                scenarioVideo.currentTime <
+                pauseAt
+            ) {
+
+                pausedOnce = false;
+
+
+                scenarioOptions.forEach(
+                    (option) => {
+
+                        option.disabled = true;
+
+                    }
+                );
+
+
+                if (videoPrompt) {
+
+                    videoPrompt.innerHTML = `
+                        <span>
+                            // FIELD SCENARIO
+                        </span>
+
+                        <strong>
+                            Watch the short scene.
+                            The video will pause before
+                            you choose your response.
+                        </strong>
+                    `;
+
+                }
+
+            }
+
+        }
+    );
+
+}
 
         /* ================================================
            Q8 RANKING
