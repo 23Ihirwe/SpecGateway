@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Discover your recommended BSE specialisation with SpecGateway."
+    >
+
+    <title>Results | SpecGateway</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body class="results-page">
+
+
+    <!-- =========================================================
+         2-SECOND BALLOON RESULT INTRO
+    ========================================================== -->
+
+    <div
+        class="result-reveal-overlay"
+        id="resultRevealOverlay"
+    >
+
+        <!-- Cute floating balloons -->
+        <div
+            class="balloon-layer"
+            aria-hidden="true"
+        >
+
+            <span class="balloon balloon-1"></span>
+            <span class="balloon balloon-2"></span>
+            <span class="balloon balloon-3"></span>
+            <span class="balloon balloon-4"></span>
+            <span class="balloon balloon-5"></span>
+            <span class="balloon balloon-6"></span>
+            <span class="balloon balloon-7"></span>
+            <span class="balloon balloon-8"></span>
+            <span class="balloon balloon-9"></span>
+            <span class="balloon balloon-10"></span>
+
+        </div>
+
+
+        <!-- Intro message -->
+        <div class="reveal-message">
+
+            <span class="reveal-small">
+                SPECGATEWAY
+            </span>
+
+
+            <p class="reveal-pretitle">
+                ASSESSMENT COMPLETE
+            </p>
+
+
+            <h1>
+
+                <span id="revealStudentName">
+                    STUDENT
+                </span>,
+
+            </h1>
+
+
+            <p class="reveal-gateway-text">
+                YOUR GATEWAY IS OPEN
+            </p>
+
+
+            <div class="reveal-stars" aria-hidden="true">
+
+                <span>✦</span>
+                <span>✧</span>
+                <span>✦</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         CELEBRATION CANVAS
+         Used for subtle confetti after result reveal
+    ========================================================== -->
+
+    <canvas
+        id="celebrationCanvas"
+        aria-hidden="true"
+    ></canvas>
+
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+
+    <nav
+        class="main-nav scrolled"
+        id="mainNav"
+        aria-label="Results navigation"
+    >
+
+        <div class="nav-container">
+
+
+            <!-- LOGO -->
+
+            <a
+                class="brand"
+                href="index.html"
+                aria-label="SpecGateway home"
+            >
+
+                <img
+                    class="brand-logo"
+                    src="assets/logo/specgateway-logo.png"
+                    alt="SpecGateway — BSE Specialisation Router"
+                >
+
+            </a>
+
+
+
+            <!-- MOBILE NAVIGATION -->
+
+            <button
+                class="nav-toggle"
+                id="navToggle"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false"
+                aria-controls="navLinks"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+
+            <!-- NAVIGATION LINKS -->
+
+            <div
+                class="nav-menu"
+                id="navLinks"
+            >
+
+                <a
+                    class="nav-link"
+                    href="index.html#gateway"
+                >
+                    Gateway
+                </a>
+
+
+                <a
+                    class="nav-link"
+                    href="index.html#paths"
+                >
+                    Paths
+                </a>
+
+
+                <a
+                    class="nav-link"
+                    href="index.html#process"
+                >
+                    How It Works
+                </a>
+
+
+                <a
+                    class="nav-link"
+                    href="contact.html"
+                >
+                    Connect
+                </a>
+
+
+                <a
+                    class="nav-cta"
+                    href="quiz.html"
+                >
+
+                    Assessment
+
+                    <span aria-hidden="true">
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================================================
+         RESULTS MAIN
+    ========================================================== -->
+
+    <main
+        class="results-main"
+        id="resultsMain"
+    >
+
+
+        <!-- =====================================================
+             01 / PRIMARY RESULT
+        ====================================================== -->
+
+        <section
+            class="results-hero section-pad"
+            id="resultsHero"
+        >
+
+            <div class="section-number">
+                01 / YOUR GATEWAY
+            </div>
+
+
+            <div class="results-hero-grid">
+
+
+                <!-- LEFT TEXT -->
+
+                <div class="results-hero-copy">
+
+
+                    <p class="results-personal-intro">
+
+                        <span id="resultFirstName">
+                            Student
+                        </span>,
+
+                        your strongest signal points here.
+
+                    </p>
+
+
+
+                    <span class="result-primary-label">
+                        PRIMARY SPECIALISATION
+                    </span>
+
+
+
+                    <h1
+                        class="result-specialisation-name"
+                        id="resultPrimaryName"
+                    >
+                        ANALYSING...
+                    </h1>
+
+
+
+                    <p
+                        class="result-primary-tagline"
+                        id="resultPrimaryTagline"
+                    >
+                        Your assessment profile is being prepared.
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- RIGHT SCORE -->
+
+                <div class="result-score-orbit">
+
+                    <div class="score-orbit-ring ring-a"></div>
+                    <div class="score-orbit-ring ring-b"></div>
+                    <div class="score-orbit-ring ring-c"></div>
+
+
+                    <div class="result-score-core">
+
+                        <strong id="primaryMatchPercent">
+                            0%
+                        </strong>
+
+                        <span>
+                            SIGNAL SHARE
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             02 / WHY IT FITS
+        ====================================================== -->
+
+        <section class="results-reasoning section-pad">
+
+            <div class="section-number">
+                02 / YOUR PATTERN
+            </div>
+
+
+            <div class="results-reasoning-grid">
+
+
+                <div class="results-reasoning-heading">
+
+                    <h2>
+
+                        YOUR ANSWERS
+                        <br>
+
+                        <em>
+                            LEFT CLUES.
+                        </em>
+
+                    </h2>
+
+
+                    <p>
+                        SpecGateway looked across your choices rather
+                        than relying on a single answer.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="reasoning-list"
+                    id="reasoningList"
+                >
+
+                    <!-- JavaScript inserts 3 reasoning cards -->
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             03 / SECONDARY MATCH
+        ====================================================== -->
+
+        <section class="secondary-result section-pad">
+
+            <div class="section-number">
+                03 / SECONDARY SIGNAL
+            </div>
+
+
+            <div class="secondary-result-grid">
+
+
+                <div>
+
+                    <h2>
+
+                        ONE RESULT
+                        <br>
+
+                        DOESN'T TELL
+                        <br>
+
+                        <em>
+                            THE WHOLE STORY.
+                        </em>
+
+                    </h2>
+
+                </div>
+
+
+
+                <article class="secondary-card">
+
+                    <span class="secondary-label">
+                        YOUR SECOND STRONGEST SIGNAL
+                    </span>
+
+
+                    <h3 id="secondaryMatchName">
+                        Loading...
+                    </h3>
+
+
+                    <div class="secondary-percentage">
+
+                        <strong id="secondaryMatchPercent">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+                    <p id="secondaryMatchCopy">
+                        Your profile also showed a meaningful connection
+                        with this specialisation.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             04 / REQUIRED HTML5 CANVAS GRAPH
+        ====================================================== -->
+
+        <section class="result-chart-section section-pad">
+
+            <div class="section-number">
+                04 / SPECIALISATION MAP
+            </div>
+
+
+            <div class="result-chart-heading">
+
+                <h2>
+
+                    FOUR PATHS.
+                    <br>
+
+                    <em>
+                        YOUR SIGNALS.
+                    </em>
+
+                </h2>
+
+
+                <p>
+                    This dynamic HTML5 Canvas visual shows how your
+                    responses were distributed across all four BSE
+                    specialisations.
+                </p>
+
+            </div>
+
+
+
+            <div class="result-chart-layout">
+
+
+                <!-- Canvas requirement -->
+
+                <div class="canvas-shell">
+
+                    <canvas
+                        id="specialisationChart"
+                        width="760"
+                        height="560"
+                        aria-label="Canvas chart showing the student's four specialisation scores"
+                    ></canvas>
+
+                </div>
+
+
+
+                <!-- Text percentages -->
+
+                <div class="score-list">
+
+
+                    <div class="score-row">
+
+                        <div>
+
+                            <span class="score-index">
+                                01
+                            </span>
+
+                            <span>
+                                Low-Level Programming
+                            </span>
+
+                        </div>
+
+                        <strong id="scoreLowLevel">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="score-row">
+
+                        <div>
+
+                            <span class="score-index">
+                                02
+                            </span>
+
+                            <span>
+                                AR / VR
+                            </span>
+
+                        </div>
+
+                        <strong id="scoreArvr">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="score-row">
+
+                        <div>
+
+                            <span class="score-index">
+                                03
+                            </span>
+
+                            <span>
+                                Full-Stack Web Development
+                            </span>
+
+                        </div>
+
+                        <strong id="scoreFullstack">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="score-row">
+
+                        <div>
+
+                            <span class="score-index">
+                                04
+                            </span>
+
+                            <span>
+                                Machine Learning
+                            </span>
+
+                        </div>
+
+                        <strong id="scoreMl">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             05 / NEXT STEPS
+        ====================================================== -->
+
+        <section class="results-next section-pad">
+
+            <div class="section-number">
+                05 / WHERE NEXT?
+            </div>
+
+
+            <div class="results-next-heading">
+
+                <h2>
+
+                    DON'T JUST
+                    <br>
+
+                    KNOW THE PATH.
+                    <br>
+
+                    <em>
+                        TEST IT.
+                    </em>
+
+                </h2>
+
+
+                <p>
+                    Use these recommendations as small experiments
+                    before making larger learning decisions.
+                </p>
+
+            </div>
+
+
+
+            <div
+                class="next-step-grid"
+                id="nextStepGrid"
+            >
+
+                <!-- JavaScript inserts pathway-specific next steps -->
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             06 / PERSONAL REFLECTION
+        ====================================================== -->
+
+        <section
+            class="result-reflection-section section-pad"
+            id="resultReflectionSection"
+        >
+
+            <div class="section-number">
+                06 / YOUR OWN WORDS
+            </div>
+
+
+            <div class="result-reflection-grid">
+
+                <div>
+
+                    <h2>
+
+                        YOU ALSO
+                        <br>
+
+                        <em>
+                            SAID...
+                        </em>
+
+                    </h2>
+
+                </div>
+
+
+                <blockquote
+                    class="student-reflection-result"
+                    id="studentReflectionResult"
+                >
+                    Your optional reflection will appear here.
+                </blockquote>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             07 / CONGRATULATIONS
+        ====================================================== -->
+
+        <section class="congratulations-section section-pad">
+
+            <div class="congratulations-inner">
+
+
+                <span class="section-number">
+                    07 / GATEWAY OPEN
+                </span>
+
+
+                <p class="congrats-small">
+                    ASSESSMENT COMPLETE
+                </p>
+
+
+                <h2>
+
+                    CONGRATULATIONS,
+                    <br>
+
+                    <em id="congratsName">
+                        STUDENT.
+                    </em>
+
+                </h2>
+
+
+                <p class="congrats-copy">
+                    You have completed your SpecGateway reflection.
+                    This result is not a permanent label — it is a
+                    direction worth exploring.
+                </p>
+
+
+                <div
+                    class="celebration-symbols"
+                    aria-hidden="true"
+                >
+
+                    <span>✦</span>
+                    <span>◌</span>
+                    <span>✧</span>
+                    <span>◈</span>
+                    <span>✦</span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             08 / SHARE YOUR RESULT
+        ====================================================== -->
+
+        <section class="share-result-section section-pad">
+
+            <div class="section-number">
+                08 / SHARE YOUR GATEWAY
+            </div>
+
+
+            <div class="share-result-grid">
+
+
+                <div class="share-result-heading">
+
+                    <h2>
+
+                        LET YOUR
+                        <br>
+
+                        <em>
+                            NETWORK KNOW.
+                        </em>
+
+                    </h2>
+
+
+                    <p>
+                        Share your recommended BSE specialisation
+                        or copy your result for another platform.
+                    </p>
+
+                </div>
+
+
+
+                <div class="share-panel">
+
+
+                    <!-- Dynamic share card -->
+
+                    <article
+                        class="share-preview-card"
+                        id="sharePreviewCard"
+                    >
+
+                        <span class="share-card-label">
+                            SPECGATEWAY / RESULT
+                        </span>
+
+
+                        <h3 id="shareResultName">
+                            Loading...
+                        </h3>
+
+
+                        <p id="shareResultText">
+                            My strongest BSE specialisation signal is...
+                        </p>
+
+
+                        <span class="share-card-footer">
+                            BSE SPECIALISATION ROUTER
+                        </span>
+
+                    </article>
+
+
+
+                    <!-- Real sharing controls -->
+
+                    <div class="share-buttons-grid">
+
+
+                        <!-- LinkedIn -->
+
+                        <button
+                            type="button"
+                            class="share-button"
+                            id="shareLinkedIn"
+                        >
+
+                            <span class="share-platform">
+                                in
+                            </span>
+
+
+                            <span>
+                                LinkedIn
+                            </span>
+
+
+                            <span class="share-arrow">
+                                ↗
+                            </span>
+
+                        </button>
+
+
+
+                        <!-- Facebook -->
+
+                        <button
+                            type="button"
+                            class="share-button"
+                            id="shareFacebook"
+                        >
+
+                            <span class="share-platform">
+                                f
+                            </span>
+
+
+                            <span>
+                                Facebook
+                            </span>
+
+
+                            <span class="share-arrow">
+                                ↗
+                            </span>
+
+                        </button>
+
+
+
+                        <!-- Instagram / native share -->
+
+                        <button
+                            type="button"
+                            class="share-button"
+                            id="shareInstagram"
+                        >
+
+                            <span class="share-platform">
+                                ◎
+                            </span>
+
+
+                            <span>
+                                Instagram
+                            </span>
+
+
+                            <span class="share-arrow">
+                                ↗
+                            </span>
+
+                        </button>
+
+
+
+                        <!-- Copy -->
+
+                        <button
+                            type="button"
+                            class="share-button"
+                            id="copyResult"
+                        >
+
+                            <span class="share-platform">
+                                ⧉
+                            </span>
+
+
+                            <span>
+                                Copy Result
+                            </span>
+
+
+                            <span class="share-arrow">
+                                ↗
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+
+
+                    <p
+                        class="share-feedback"
+                        id="shareFeedback"
+                        aria-live="polite"
+                    ></p>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             09 / RETAKE
+        ====================================================== -->
+
+        <section class="results-actions section-pad">
+
+            <div class="results-action-inner">
+
+
+                <div>
+
+                    <span class="section-number">
+                        09 / KEEP EXPLORING
+                    </span>
+
+
+                    <h2>
+
+                        YOUR INTERESTS
+                        <br>
+
+                        <em>
+                            CAN EVOLVE.
+                        </em>
+
+                    </h2>
+
+
+                    <p>
+                        Explore the recommended path, then return later
+                        if your interests change.
+                    </p>
+
+                </div>
+
+
+
+                <div class="results-action-buttons">
+
+
+                    <button
+                        type="button"
+                        class="button button-primary"
+                        id="retakeAssessment"
+                    >
+
+                        Retake Assessment
+
+                        <span aria-hidden="true">
+                            ↗
+                        </span>
+
+                    </button>
+
+
+
+                    <a
+                        href="contact.html"
+                        class="button button-ghost"
+                    >
+
+                        Ask a Question
+
+                        <span aria-hidden="true">
+                            ↗
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+
+                <p
+                    class="retake-message"
+                    id="retakeMessage"
+                    aria-live="polite"
+                ></p>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="main-footer">
+
+
+        <div class="footer-brand-lockup">
+
+            <img
+                src="assets/logo/specgateway-logo.png"
+                alt="SpecGateway — BSE Specialisation Router"
+            >
+
+        </div>
+
+
+
+        <div class="footer-columns">
+
+
+            <div>
+
+                <p class="footer-label">
+                    PROJECT
+                </p>
+
+
+                <p>
+                    An interactive BSE Specialisation Advisor
+                    for incoming software engineering students.
+                </p>
+
+            </div>
+
+
+
+            <nav aria-label="Footer navigation">
+
+                <p class="footer-label">
+                    NAVIGATE
+                </p>
+
+
+                <a href="index.html#gateway">
+                    Gateway
+                </a>
+
+
+                <a href="index.html#paths">
+                    Paths
+                </a>
+
+
+                <a href="quiz.html">
+                    Assessment
+                </a>
+
+
+                <a href="contact.html">
+                    Connect
+                </a>
+
+            </nav>
+
+
+
+            <div>
+
+                <p class="footer-label">
+                    SPECIALISATIONS
+                </p>
+
+
+                <p>
+                    Low-Level Programming
+                </p>
+
+
+                <p>
+                    AR / VR
+                </p>
+
+
+                <p>
+                    Full-Stack Web Development
+                </p>
+
+
+                <p>
+                    Machine Learning
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 SpecGateway
+            </span>
+
+
+            <span>
+                BSE SPECIALISATION ROUTER
+            </span>
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,2284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="SpecGateway interactive BSE specialisation assessment."
+    >
+
+    <title>Assessment | SpecGateway</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body class="quiz-page">
+
+    <!-- Decorative background -->
+    <canvas id="quizCanvas" aria-hidden="true"></canvas>
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+
+    <nav
+        class="main-nav scrolled"
+        id="mainNav"
+        aria-label="Assessment navigation"
+    >
+
+        <div class="nav-container">
+
+            <a
+                href="index.html"
+                class="brand"
+                aria-label="SpecGateway home"
+            >
+                <img
+                    src="assets/logo/specgateway-logo.png"
+                    alt="SpecGateway — BSE Specialisation Router"
+                    class="brand-logo"
+                >
+            </a>
+
+
+            <div class="quiz-nav-status">
+
+                <div class="quiz-timer-box">
+
+                    <span class="quiz-timer-label">
+                        TIME LEFT
+                    </span>
+
+                    <strong id="quizTimer">
+                        10:00
+                    </strong>
+
+                </div>
+
+
+                <div class="quiz-revision-box">
+
+                    <span>
+                        REVISIONS
+                    </span>
+
+                    <strong id="revisionCount">
+                        2
+                    </strong>
+
+                </div>
+
+
+                <a
+                    href="index.html"
+                    class="quiz-exit"
+                >
+                    EXIT
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================================================
+         QUIZ
+    ========================================================== -->
+
+    <main class="quiz-main">
+
+
+        <!-- =====================================================
+             PROGRESS
+        ====================================================== -->
+
+        <div class="quiz-progress">
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    id="progressFill"
+                ></div>
+
+            </div>
+
+
+            <div class="progress-info">
+
+                <span class="progress-text">
+
+                    Question
+
+                    <strong id="currentQ">
+                        1
+                    </strong>
+
+                    of
+
+                    <span id="totalQ">
+                        10
+                    </span>
+
+                </span>
+
+
+                <span
+                    class="progress-percent"
+                    id="progressPercent"
+                >
+                    10%
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             FORM
+        ====================================================== -->
+
+        <form
+            id="quizForm"
+            class="quiz-form"
+            novalidate
+        >
+
+
+            <!-- =================================================
+                 QUESTION 1
+                 VISUAL BUILD INSTINCT
+            ================================================== -->
+
+            <section
+                class="question-section active"
+                data-question="1"
+                data-type="single"
+            >
+
+                <div class="question-container">
+
+
+                    <div class="question-header">
+
+                        <span class="question-number">
+                            01
+                        </span>
+
+                        <span class="question-category">
+                            Build Instinct
+                        </span>
+
+                    </div>
+
+
+                    <h2 class="question-text">
+                        You have one free weekend and no assignment brief.
+                        Which problem would you be most curious to solve?
+                    </h2>
+
+
+                    <p class="question-hint">
+                        Choose the one you would start even if nobody asked you to.
+                    </p>
+
+
+                    <div class="answer-grid visual-cards">
+
+
+                        <!-- LOW LEVEL -->
+
+                        <label
+                            class="visual-card"
+                            data-spec="lowlevel"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q1"
+                                value="lowlevel"
+                                required
+                            >
+
+                            <div class="card-visual">
+
+                                <div class="card-icon-wrap">
+
+                                    <svg
+                                        viewBox="0 0 48 48"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                    >
+                                        <rect
+                                            x="8"
+                                            y="8"
+                                            width="32"
+                                            height="32"
+                                            rx="4"
+                                        />
+
+                                        <path d="M15 16h18M15 24h12M15 32h16"/>
+
+                                        <circle
+                                            cx="35"
+                                            cy="32"
+                                            r="2"
+                                            fill="currentColor"
+                                        />
+                                    </svg>
+
+                                </div>
+
+
+                                <h3>
+                                    Make a tiny program dramatically faster
+                                </h3>
+
+                                <p>
+                                    Understand exactly where time and memory
+                                    are being wasted.
+                                </p>
+
+                            </div>
+
+
+                            <div class="card-check">
+                                ✓
+                            </div>
+
+                        </label>
+
+
+
+                        <!-- AR / VR -->
+
+                        <label
+                            class="visual-card"
+                            data-spec="arvr"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q1"
+                                value="arvr"
+                                required
+                            >
+
+                            <div class="card-visual">
+
+                                <div class="card-icon-wrap">
+
+                                    <svg
+                                        viewBox="0 0 48 48"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                    >
+                                        <path
+                                            d="M5 17a4 4 0 014-4h30a4 4 0 014 4v14a4 4 0 01-4 4H9a4 4 0 01-4-4V17z"
+                                        />
+
+                                        <circle cx="17" cy="24" r="5"/>
+                                        <circle cx="31" cy="24" r="5"/>
+                                    </svg>
+
+                                </div>
+
+
+                                <h3>
+                                    Create an interaction that feels physical
+                                </h3>
+
+                                <p>
+                                    Make movement, depth and space feel natural
+                                    to the person using it.
+                                </p>
+
+                            </div>
+
+
+                            <div class="card-check">
+                                ✓
+                            </div>
+
+                        </label>
+
+
+
+                        <!-- FULL STACK -->
+
+                        <label
+                            class="visual-card"
+                            data-spec="fullstack"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q1"
+                                value="fullstack"
+                                required
+                            >
+
+                            <div class="card-visual">
+
+                                <div class="card-icon-wrap">
+
+                                    <svg
+                                        viewBox="0 0 48 48"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                    >
+                                        <rect
+                                            x="6"
+                                            y="8"
+                                            width="36"
+                                            height="32"
+                                            rx="4"
+                                        />
+
+                                        <path d="M6 16h36M18 16v24M30 16v24"/>
+                                    </svg>
+
+                                </div>
+
+
+                                <h3>
+                                    Turn a useful idea into a working service
+                                </h3>
+
+                                <p>
+                                    Connect the interface, logic and data
+                                    until someone can actually use it.
+                                </p>
+
+                            </div>
+
+
+                            <div class="card-check">
+                                ✓
+                            </div>
+
+                        </label>
+
+
+
+                        <!-- MACHINE LEARNING -->
+
+                        <label
+                            class="visual-card"
+                            data-spec="ml"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q1"
+                                value="ml"
+                                required
+                            >
+
+                            <div class="card-visual">
+
+                                <div class="card-icon-wrap">
+
+                                    <svg
+                                        viewBox="0 0 48 48"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                    >
+                                        <circle cx="12" cy="24" r="3"/>
+                                        <circle cx="24" cy="10" r="3"/>
+                                        <circle cx="36" cy="24" r="3"/>
+                                        <circle cx="24" cy="38" r="3"/>
+
+                                        <path
+                                            d="M14 22l8-10M26 12l8 10M34 26l-8 10M22 36l-8-10"
+                                        />
+                                    </svg>
+
+                                </div>
+
+
+                                <h3>
+                                    Find a hidden signal in confusing data
+                                </h3>
+
+                                <p>
+                                    Discover a pattern that helps explain
+                                    or predict what happens next.
+                                </p>
+
+                            </div>
+
+
+                            <div class="card-check">
+                                ✓
+                            </div>
+
+                        </label>
+
+                    </div>
+
+
+                    <p
+                        class="validation-error"
+                        id="error-q1"
+                    >
+                        Choose the problem that attracts you most.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 QUESTION 2
+                 SLIDER
+            ================================================== -->
+
+            <section
+                class="question-section"
+                data-question="2"
+                data-type="slider"
+            >
+
+                <div class="question-container">
+
+
+                    <div class="question-header">
+
+                        <span class="question-number">
+                            02
+                        </span>
+
+                        <span class="question-category">
+                            Abstraction Comfort
+                        </span>
+
+                    </div>
+
+
+                    <h2 class="question-text">
+                        When building something new, how much of what happens
+                        underneath do you want to control yourself?
+                    </h2>
+
+
+                    <p class="question-hint">
+                        Move the slider to the position that feels most natural.
+                    </p>
+
+
+                    <div class="slider-container">
+
+
+                        <div class="slider-labels">
+
+                            <span>
+                                Use strong abstractions
+                                <small>
+                                    Tools handle the details
+                                </small>
+                            </span>
+
+
+                            <span>
+                                Control the foundations
+                                <small>
+                                    I want to understand each layer
+                                </small>
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="slider-track">
+
+                            <input
+                                type="range"
+                                name="q2"
+                                id="q2Slider"
+                                min="1"
+                                max="5"
+                                value="1"
+                                class="styled-slider"
+                            >
+
+
+                            <div
+                                class="slider-fill"
+                                id="q2SliderFill"
+                            ></div>
+
+
+                            <div class="slider-markers">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="slider-value-display">
+
+                            <span id="q2SliderText">
+                                I like understanding enough of both
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 QUESTION 3
+                 REACTION
+            ================================================== -->
+
+            <section
+                class="question-section"
+                data-question="3"
+                data-type="single"
+            >
+
+                <div class="question-container">
+
+
+                    <div class="question-header">
+
+                        <span class="question-number">
+                            03
+                        </span>
+
+                        <span class="question-category">
+                            Satisfaction Trigger
+                        </span>
+
+                    </div>
+
+
+                    <h2 class="question-text">
+                        Which moment gives you the strongest
+                        “I made this work” feeling?
+                    </h2>
+
+
+                    <div class="answer-grid icon-options">
+
+
+                        <label
+                            class="icon-option"
+                            data-spec="lowlevel"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q3"
+                                value="lowlevel"
+                                required
+                            >
+
+                            <div class="icon-visual">
+
+                                <span class="option-icon">
+                                    ⚡
+                                </span>
+
+                                <span class="icon-text">
+                                    Watching execution time drop after
+                                    a careful optimization
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+
+                        <label
+                            class="icon-option"
+                            data-spec="arvr"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q3"
+                                value="arvr"
+                                required
+                            >
+
+                            <div class="icon-visual">
+
+                                <span class="option-icon">
+                                    ◉
+                                </span>
+
+                                <span class="icon-text">
+                                    Seeing someone instinctively understand
+                                    an interaction without instructions
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+
+                        <label
+                            class="icon-option"
+                            data-spec="fullstack"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q3"
+                                value="fullstack"
+                                required
+                            >
+
+                            <div class="icon-visual">
+
+                                <span class="option-icon">
+                                    ↗
+                                </span>
+
+                                <span class="icon-text">
+                                    Opening a finished product and seeing
+                                    every part communicate correctly
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+
+                        <label
+                            class="icon-option"
+                            data-spec="ml"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q3"
+                                value="ml"
+                                required
+                            >
+
+                            <div class="icon-visual">
+
+                                <span class="option-icon">
+                                    ∑
+                                </span>
+
+                                <span class="icon-text">
+                                    Watching an experiment improve after
+                                    discovering a better signal
+                                </span>
+
+                            </div>
+
+                        </label>
+
+                    </div>
+
+
+                    <p
+                        class="validation-error"
+                        id="error-q3"
+                    >
+                        Choose the moment that would satisfy you most.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 QUESTION 4
+                 SCENARIO MATRIX
+            ================================================== -->
+
+            <section
+                class="question-section"
+                data-question="4"
+                data-type="single"
+            >
+
+                <div class="question-container">
+
+
+                    <div class="question-header">
+
+                        <span class="question-number">
+                            04
+                        </span>
+
+                        <span class="question-category">
+                            Unknown System
+                        </span>
+
+                    </div>
+
+
+                    <h2 class="question-text">
+                        You inherit a complex project with almost no
+                        documentation. What would you explore first?
+                    </h2>
+
+
+                    <div class="answer-grid visual-cards">
+
+
+                        <label
+                            class="visual-card"
+                            data-spec="lowlevel"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q4"
+                                value="lowlevel"
+                                required
+                            >
+
+                            <div class="card-visual">
+
+                                <div class="card-icon-wrap">
+                                    ⌁
+                                </div>
+
+                                <h3>
+                                    Runtime behaviour
+                                </h3>
+
+                                <p>
+                                    What resources it consumes, where it slows
+                                    down and how the machine executes it.
+                                </p>
+
+                            </div>
+
+                            <div class="card-check">
+                                ✓
+                            </div>
+
+                        </label>
+
+
+
+                        <label
+                            class="visual-card"
+                            data-spec="arvr"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q4"
+                                value="arvr"
+                                required
+                            >
+
+                            <div class="card-visual">
+
+                                <div class="card-icon-wrap">
+                                    ◎
+                                </div>
+
+                                <h3>
+                                    Interaction behaviour
+                                </h3>
+
+                                <p>
+                                    How movement, feedback, depth and
+                                    environment shape the experience.
+                                </p>
+
+                            </div>
+
+                            <div class="card-check">
+                                ✓
+                            </div>
+
+                        </label>
+
+
+
+                        <label
+                            class="visual-card"
+                            data-spec="fullstack"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q4"
+                                value="fullstack"
+                                required
+                            >
+
+                            <div class="card-visual">
+
+                                <div class="card-icon-wrap">
+                                    ⇄
+                                </div>
+
+                                <h3>
+                                    Application architecture
+                                </h3>
+
+                                <p>
+                                    How requests move between the browser,
+                                    services, authentication and database.
+                                </p>
+
+                            </div>
+
+                            <div class="card-check">
+                                ✓
+                            </div>
+
+                        </label>
+
+
+
+                        <label
+                            class="visual-card"
+                            data-spec="ml"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q4"
+                                value="ml"
+                                required
+                            >
+
+                            <div class="card-visual">
+
+                                <div class="card-icon-wrap">
+                                    ◌
+                                </div>
+
+                                <h3>
+                                    Information behaviour
+                                </h3>
+
+                                <p>
+                                    What data enters the system and what
+                                    patterns explain its outputs.
+                                </p>
+
+                            </div>
+
+                            <div class="card-check">
+                                ✓
+                            </div>
+
+                        </label>
+
+                    </div>
+
+
+                    <p
+                        class="validation-error"
+                        id="error-q4"
+                    >
+                        Select where you would begin investigating.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 QUESTION 5
+                 WORD RESONANCE
+            ================================================== -->
+
+            <section
+                class="question-section"
+                data-question="5"
+                data-type="single"
+            >
+
+                <div class="question-container">
+
+
+                    <div class="question-header">
+
+                        <span class="question-number">
+                            05
+                        </span>
+
+                        <span class="question-category">
+                            Word Resonance
+                        </span>
+
+                    </div>
+
+
+                    <h2 class="question-text">
+                        Which cluster feels most like the kind of problems
+                        you could spend years becoming excellent at?
+                    </h2>
+
+
+                    <p class="question-hint">
+                        Respond to the whole cluster, not just one word.
+                    </p>
+
+
+                    <div class="word-cloud-options">
+
+
+                        <label
+                            class="word-cloud-option"
+                            data-spec="lowlevel"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q5"
+                                value="lowlevel"
+                                required
+                            >
+
+                            <div class="word-cluster">
+
+                                <span class="word primary">
+                                    CONTROL
+                                </span>
+
+                                <span class="word">
+                                    Latency
+                                </span>
+
+                                <span class="word">
+                                    Memory
+                                </span>
+
+                                <span class="word">
+                                    Precision
+                                </span>
+
+                                <span class="word">
+                                    Execution
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+
+                        <label
+                            class="word-cloud-option"
+                            data-spec="arvr"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q5"
+                                value="arvr"
+                                required
+                            >
+
+                            <div class="word-cluster">
+
+                                <span class="word primary">
+                                    PRESENCE
+                                </span>
+
+                                <span class="word">
+                                    Space
+                                </span>
+
+                                <span class="word">
+                                    Motion
+                                </span>
+
+                                <span class="word">
+                                    Perception
+                                </span>
+
+                                <span class="word">
+                                    Interaction
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+
+                        <label
+                            class="word-cloud-option"
+                            data-spec="fullstack"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q5"
+                                value="fullstack"
+                                required
+                            >
+
+                            <div class="word-cluster">
+
+                                <span class="word primary">
+                                    PRODUCT
+                                </span>
+
+                                <span class="word">
+                                    Users
+                                </span>
+
+                                <span class="word">
+                                    Services
+                                </span>
+
+                                <span class="word">
+                                    Scale
+                                </span>
+
+                                <span class="word">
+                                    Delivery
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+
+                        <label
+                            class="word-cloud-option"
+                            data-spec="ml"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q5"
+                                value="ml"
+                                required
+                            >
+
+                            <div class="word-cluster">
+
+                                <span class="word primary">
+                                    SIGNAL
+                                </span>
+
+                                <span class="word">
+                                    Data
+                                </span>
+
+                                <span class="word">
+                                    Patterns
+                                </span>
+
+                                <span class="word">
+                                    Evidence
+                                </span>
+
+                                <span class="word">
+                                    Prediction
+                                </span>
+
+                            </div>
+
+                        </label>
+
+                    </div>
+
+
+                    <p
+                        class="validation-error"
+                        id="error-q5"
+                    >
+                        Choose the cluster that resonates most.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 QUESTION 6
+                 MULTI SELECT
+            ================================================== -->
+
+            <section
+                class="question-section"
+                data-question="6"
+                data-type="multi"
+            >
+
+                <div class="question-container">
+
+
+                    <div class="question-header">
+
+                        <span class="question-number">
+                            06
+                        </span>
+
+                        <span class="question-category">
+                            Skill Gravitation
+                        </span>
+
+                    </div>
+
+
+                    <h2 class="question-text">
+                        Choose exactly 3 skills you would willingly struggle
+                        to become excellent at.
+                    </h2>
+
+
+                    <p class="question-hint">
+
+                        Selected:
+
+                        <span id="skillCount">
+                            0
+                        </span>
+
+                        /3
+
+                    </p>
+
+
+                    <div class="checkbox-grid skills-grid">
+
+
+                        <label
+                            class="skill-checkbox"
+                            data-spec="lowlevel"
+                        >
+
+                            <input
+                                type="checkbox"
+                                name="q6"
+                                value="lowlevel-memory"
+                            >
+
+                            <span class="checkbox-visual">
+                                ✓
+                            </span>
+
+                            <span class="skill-name">
+                                Memory & Resource Management
+                            </span>
+
+                        </label>
+
+
+
+                        <label
+                            class="skill-checkbox"
+                            data-spec="arvr"
+                        >
+
+                            <input
+                                type="checkbox"
+                                name="q6"
+                                value="arvr-spatial"
+                            >
+
+                            <span class="checkbox-visual">
+                                ✓
+                            </span>
+
+                            <span class="skill-name">
+                                Spatial Interaction Design
+                            </span>
+
+                        </label>
+
+
+
+                        <label
+                            class="skill-checkbox"
+                            data-spec="fullstack"
+                        >
+
+                            <input
+                                type="checkbox"
+                                name="q6"
+                                value="fullstack-api"
+                            >
+
+                            <span class="checkbox-visual">
+                                ✓
+                            </span>
+
+                            <span class="skill-name">
+                                API Architecture
+                            </span>
+
+                        </label>
+
+
+
+                        <label
+                            class="skill-checkbox"
+                            data-spec="ml"
+                        >
+
+                            <input
+                                type="checkbox"
+                                name="q6"
+                                value="ml-models"
+                            >
+
+                            <span class="checkbox-visual">
+                                ✓
+                            </span>
+
+                            <span class="skill-name">
+                                Model Experimentation
+                            </span>
+
+                        </label>
+
+
+
+                        <label
+                            class="skill-checkbox"
+                            data-spec="lowlevel"
+                        >
+
+                            <input
+                                type="checkbox"
+                                name="q6"
+                                value="lowlevel-debug"
+                            >
+
+                            <span class="checkbox-visual">
+                                ✓
+                            </span>
+
+                            <span class="skill-name">
+                                Performance Profiling
+                            </span>
+
+                        </label>
+
+
+
+                        <label
+                            class="skill-checkbox"
+                            data-spec="arvr"
+                        >
+
+                            <input
+                                type="checkbox"
+                                name="q6"
+                                value="arvr-3d"
+                            >
+
+                            <span class="checkbox-visual">
+                                ✓
+                            </span>
+
+                            <span class="skill-name">
+                                3D Rendering & Motion
+                            </span>
+
+                        </label>
+
+
+
+                        <label
+                            class="skill-checkbox"
+                            data-spec="fullstack"
+                        >
+
+                            <input
+                                type="checkbox"
+                                name="q6"
+                                value="fullstack-data"
+                            >
+
+                            <span class="checkbox-visual">
+                                ✓
+                            </span>
+
+                            <span class="skill-name">
+                                Databases & Application State
+                            </span>
+
+                        </label>
+
+
+
+                        <label
+                            class="skill-checkbox"
+                            data-spec="ml"
+                        >
+
+                            <input
+                                type="checkbox"
+                                name="q6"
+                                value="ml-analysis"
+                            >
+
+                            <span class="checkbox-visual">
+                                ✓
+                            </span>
+
+                            <span class="skill-name">
+                                Data Analysis & Evaluation
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <p
+                        class="validation-error"
+                        id="error-q6"
+                    >
+                        Choose exactly three skills.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+           <!-- Question 7 -->
+
+<section
+    class="question-section"
+    data-question="7"
+    data-type="video"
+>
+
+    <div class="question-container">
+
+
+        <!-- Question Header -->
+
+        <div class="question-header">
+
+            <span class="question-number">
+                07
+            </span>
+
+            <span class="question-category">
+                Performance Investigation
+            </span>
+
+        </div>
+
+
+        <!-- Question -->
+
+        <h2 class="question-text">
+            A product feels fast during development, but real users
+            begin reporting delays and inconsistent performance.
+            How would you investigate what is happening?
+        </h2>
+
+
+        <!-- Question Hint -->
+
+        <p class="question-hint">
+            Watch the performance debugging example, then choose
+            the direction you would naturally want to investigate next.
+        </p>
+
+
+        <!-- Video -->
+
+        <div class="quiz-video-shell">
+
+            <iframe
+                id="scenarioVideo"
+                class="scenario-video scenario-youtube"
+                src="https://www.youtube.com/embed/BHqxD9qr6Gw?rel=0"
+                title="Performance debugging in DevTools"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+            ></iframe>
+
+        </div>
+
+
+        <!-- Field Scenario -->
+
+        <div class="video-prompt video-prompt-visible">
+
+            <span>
+                // FIELD SCENARIO
+            </span>
+
+            <strong>
+                Which investigation would you take ownership of next?
+            </strong>
+
+        </div>
+
+
+        <!-- Answers -->
+
+        <div class="scenario-options">
+
+
+            <!-- Low Level -->
+
+            <label
+                class="scenario-option"
+                data-spec="lowlevel"
+            >
+
+                <input
+                    type="radio"
+                    name="q7"
+                    value="lowlevel"
+                    required
+                >
+
+                <div class="scenario-content">
+
+                    <span class="scenario-letter">
+                        A
+                    </span>
+
+                    <p>
+                        Go deeper into CPU usage, memory behaviour and
+                        execution timing to understand where the machine
+                        is spending its resources.
+                    </p>
+
+                </div>
+
+            </label>
+
+
+            <!-- AR VR -->
+
+            <label
+                class="scenario-option"
+                data-spec="arvr"
+            >
+
+                <input
+                    type="radio"
+                    name="q7"
+                    value="arvr"
+                    required
+                >
+
+                <div class="scenario-content">
+
+                    <span class="scenario-letter">
+                        B
+                    </span>
+
+                    <p>
+                        Focus on frame rate, rendering work and interaction
+                        responsiveness to understand what the person
+                        actually experiences on screen.
+                    </p>
+
+                </div>
+
+            </label>
+
+
+            <!-- Full Stack -->
+
+            <label
+                class="scenario-option"
+                data-spec="fullstack"
+            >
+
+                <input
+                    type="radio"
+                    name="q7"
+                    value="fullstack"
+                    required
+                >
+
+                <div class="scenario-content">
+
+                    <span class="scenario-letter">
+                        C
+                    </span>
+
+                    <p>
+                        Trace network requests and application flow across
+                        the interface, API, server and data layer to find
+                        where delays are introduced.
+                    </p>
+
+                </div>
+
+            </label>
+
+
+            <!-- Machine Learning -->
+
+            <label
+                class="scenario-option"
+                data-spec="ml"
+            >
+
+                <input
+                    type="radio"
+                    name="q7"
+                    value="ml"
+                    required
+                >
+
+                <div class="scenario-content">
+
+                    <span class="scenario-letter">
+                        D
+                    </span>
+
+                    <p>
+                        Compare many performance traces and usage records
+                        to discover recurring patterns that could help
+                        predict when slowdowns are likely to happen.
+                    </p>
+
+                </div>
+
+            </label>
+
+        </div>
+
+
+        <!-- Validation -->
+
+        <p
+            class="validation-error"
+            id="error-q7"
+        >
+            Choose the investigation direction that feels most natural to you.
+        </p>
+
+
+    </div>
+
+</section>
+            <!-- =================================================
+                 QUESTION 8
+                 RANKING
+            ================================================== -->
+
+            <section
+                class="question-section"
+                data-question="8"
+                data-type="ranking"
+            >
+
+                <div class="question-container">
+
+
+                    <div class="question-header">
+
+                        <span class="question-number">
+                            08
+                        </span>
+
+                        <span class="question-category">
+                            Value Ranking
+                        </span>
+
+                    </div>
+
+
+                    <h2 class="question-text">
+                        Rank what matters most to you when a project is finished.
+                    </h2>
+
+
+                    <p class="question-hint">
+                        Click each item to assign ranks.
+                        1 = most important.
+                    </p>
+
+
+                    <div
+                        class="ranking-container"
+                        id="rankingContainer"
+                    >
+
+
+                        <div
+                            class="ranking-item"
+                            data-spec="lowlevel"
+                            data-id="efficiency"
+                        >
+
+                            <span class="rank-badge">
+                                -
+                            </span>
+
+                            <span class="rank-text">
+                                Technical Efficiency
+                            </span>
+
+                            <span class="rank-desc">
+                                It uses resources exceptionally well
+                            </span>
+
+                        </div>
+
+
+
+                        <div
+                            class="ranking-item"
+                            data-spec="arvr"
+                            data-id="experience"
+                        >
+
+                            <span class="rank-badge">
+                                -
+                            </span>
+
+                            <span class="rank-text">
+                                Quality of Experience
+                            </span>
+
+                            <span class="rank-desc">
+                                It feels intuitive, responsive and memorable
+                            </span>
+
+                        </div>
+
+
+
+                        <div
+                            class="ranking-item"
+                            data-spec="fullstack"
+                            data-id="usefulness"
+                        >
+
+                            <span class="rank-badge">
+                                -
+                            </span>
+
+                            <span class="rank-text">
+                                Real-World Usefulness
+                            </span>
+
+                            <span class="rank-desc">
+                                People can depend on the complete product
+                            </span>
+
+                        </div>
+
+
+
+                        <div
+                            class="ranking-item"
+                            data-spec="ml"
+                            data-id="adaptation"
+                        >
+
+                            <span class="rank-badge">
+                                -
+                            </span>
+
+                            <span class="rank-text">
+                                Learning & Adaptation
+                            </span>
+
+                            <span class="rank-desc">
+                                It improves as more information becomes available
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <input
+                        type="hidden"
+                        name="q8-rank1"
+                        id="q8Rank1"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="q8-rank2"
+                        id="q8Rank2"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="q8-rank3"
+                        id="q8Rank3"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="q8-rank4"
+                        id="q8Rank4"
+                    >
+
+
+                    <button
+                        type="button"
+                        class="btn btn-ghost reset-ranking"
+                        id="resetRanking"
+                    >
+                        Reset ranking
+                    </button>
+
+
+                    <p
+                        class="validation-error"
+                        id="error-q8"
+                    >
+                        Rank all four values before continuing.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 QUESTION 9
+                 PHILOSOPHY
+            ================================================== -->
+
+            <section
+                class="question-section"
+                data-question="9"
+                data-type="single"
+            >
+
+                <div class="question-container">
+
+
+                    <div class="question-header">
+
+                        <span class="question-number">
+                            09
+                        </span>
+
+                        <span class="question-category">
+                            Engineering Philosophy
+                        </span>
+
+                    </div>
+
+
+                    <h2 class="question-text">
+                        Which statement is closest to how you believe
+                        good technology should behave?
+                    </h2>
+
+
+                    <div class="philosophy-options">
+
+
+                        <label
+                            class="philosophy-option"
+                            data-spec="lowlevel"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q9"
+                                value="lowlevel"
+                                required
+                            >
+
+                            <div class="philosophy-content">
+
+                                <blockquote>
+                                    “A system becomes trustworthy when you
+                                    understand what it is really doing,
+                                    not just what the interface says.”
+                                </blockquote>
+
+                                <cite>
+                                    — Foundation-first thinking
+                                </cite>
+
+                            </div>
+
+                        </label>
+
+
+
+                        <label
+                            class="philosophy-option"
+                            data-spec="arvr"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q9"
+                                value="arvr"
+                                required
+                            >
+
+                            <div class="philosophy-content">
+
+                                <blockquote>
+                                    “The best technology almost disappears;
+                                    people simply understand how to move,
+                                    act and respond inside the experience.”
+                                </blockquote>
+
+                                <cite>
+                                    — Experience-first thinking
+                                </cite>
+
+                            </div>
+
+                        </label>
+
+
+
+                        <label
+                            class="philosophy-option"
+                            data-spec="fullstack"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q9"
+                                value="fullstack"
+                                required
+                            >
+
+                            <div class="philosophy-content">
+
+                                <blockquote>
+                                    “Technology matters most when every layer
+                                    works together reliably enough for people
+                                    to depend on the result.”
+                                </blockquote>
+
+                                <cite>
+                                    — Product-first thinking
+                                </cite>
+
+                            </div>
+
+                        </label>
+
+
+
+                        <label
+                            class="philosophy-option"
+                            data-spec="ml"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q9"
+                                value="ml"
+                                required
+                            >
+
+                            <div class="philosophy-content">
+
+                                <blockquote>
+                                    “Good systems should not only execute rules;
+                                    they should use evidence to become better
+                                    at making decisions.”
+                                </blockquote>
+
+                                <cite>
+                                    — Evidence-first thinking
+                                </cite>
+
+                            </div>
+
+                        </label>
+
+                    </div>
+
+
+                    <p
+                        class="validation-error"
+                        id="error-q9"
+                    >
+                        Select the statement closest to your thinking.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 QUESTION 10
+                 FUTURE DIRECTION
+            ================================================== -->
+
+            <section
+                class="question-section"
+                data-question="10"
+                data-type="single"
+            >
+
+                <div class="question-container">
+
+
+                    <div class="question-header">
+
+                        <span class="question-number">
+                            10
+                        </span>
+
+                        <span class="question-category">
+                            Future Direction
+                        </span>
+
+                    </div>
+
+
+                    <h2 class="question-text">
+                        Five years from now, which sentence would make you
+                        proudest to say about the systems you helped build?
+                    </h2>
+
+
+                    <div class="final-options">
+
+
+                        <label
+                            class="final-option"
+                            data-spec="lowlevel"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q10"
+                                value="lowlevel"
+                                required
+                            >
+
+                            <span class="final-index">
+                                01
+                            </span>
+
+                            <span class="option-text">
+                                “We made something remarkably efficient because
+                                we understood its foundations deeply.”
+                            </span>
+
+                        </label>
+
+
+
+                        <label
+                            class="final-option"
+                            data-spec="arvr"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q10"
+                                value="arvr"
+                                required
+                            >
+
+                            <span class="final-index">
+                                02
+                            </span>
+
+                            <span class="option-text">
+                                “We created an experience that changed how
+                                people interact with digital information.”
+                            </span>
+
+                        </label>
+
+
+
+                        <label
+                            class="final-option"
+                            data-spec="fullstack"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q10"
+                                value="fullstack"
+                                required
+                            >
+
+                            <span class="final-index">
+                                03
+                            </span>
+
+                            <span class="option-text">
+                                “We turned an idea into a reliable product
+                                people use as part of their everyday lives.”
+                            </span>
+
+                        </label>
+
+
+
+                        <label
+                            class="final-option"
+                            data-spec="ml"
+                        >
+
+                            <input
+                                type="radio"
+                                name="q10"
+                                value="ml"
+                                required
+                            >
+
+                            <span class="final-index">
+                                04
+                            </span>
+
+                            <span class="option-text">
+                                “We built a system that discovered useful
+                                patterns people could not easily see themselves.”
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <div class="custom-input-wrap">
+
+
+                        <label
+                            for="customGoal"
+                            class="custom-label"
+                        >
+                            Add one thought of your own
+                            <span>
+                                optional
+                            </span>
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="customGoal"
+                            name="customGoal"
+                            class="custom-input"
+                            placeholder="Five years from now, I also want to..."
+                            maxlength="180"
+                        >
+
+
+                        <span class="char-count">
+
+                            <span id="charCount">
+                                0
+                            </span>
+
+                            /180
+
+                        </span>
+
+                    </div>
+
+
+                    <p
+                        class="validation-error"
+                        id="error-q10"
+                    >
+                        Choose the statement closest to your future direction.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 NAVIGATION
+            ================================================== -->
+
+            <div class="quiz-navigation">
+
+
+                <button
+                    type="button"
+                    class="btn btn-ghost nav-prev"
+                    id="prevBtn"
+                    disabled
+                >
+
+                    <span class="btn-icon">
+                        ←
+                    </span>
+
+                    <span class="btn-text">
+                        Previous
+                    </span>
+
+                </button>
+
+
+
+                <div class="quiz-save-state">
+
+                    <span id="questionSaveStatus">
+                        Choose an answer
+                    </span>
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    class="btn btn-primary nav-next"
+                    id="nextBtn"
+                >
+
+                    <span class="btn-text">
+                        Continue
+                    </span>
+
+                    <span class="btn-icon">
+                        →
+                    </span>
+
+                    <span class="btn-glow"></span>
+
+                </button>
+
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary nav-submit"
+                    id="submitBtn"
+                    style="display:none"
+                >
+
+                    <span class="btn-text">
+                        Reveal My Path
+                    </span>
+
+                    <span class="btn-icon">
+                        ✦
+                    </span>
+
+                    <span class="btn-glow"></span>
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </main>
+
+
+
+    <!-- =========================================================
+         TIMER COMPLETE
+    ========================================================== -->
+
+    <div
+        class="quiz-timeout-overlay"
+        id="quizTimeoutOverlay"
+        hidden
+    >
+
+        <div class="timeout-card">
+
+            <span class="section-number">
+               TIME COMPLETE
+            </span>
+
+
+            <h2>
+                Your current signals are ready.
+            </h2>
+
+
+            <p>
+                SpecGateway will calculate your pathway using the answers
+                you completed before the timer ended.
+            </p>
+
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="timeoutResultsButton"
+            >
+
+                <span class="btn-text">
+                    Reveal My Path
+                </span>
+
+                <span class="btn-icon">
+                    →
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

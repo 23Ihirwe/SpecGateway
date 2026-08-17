@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        SpecGateway — BSE Specialisation Advisor
+        Landing page
+        Purpose: welcome BSE students, introduce the four pathways,
+        collect preliminary student information and launch the assessment.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="SpecGateway helps incoming BSE students explore Low-Level Programming, AR/VR, Full-Stack Web Development and Machine Learning."
+    >
+
+    <title>SpecGateway | BSE Specialisation Advisor</title>
+
+    <!-- Main project stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="landing-page">
+
+    <!-- =========================================================
+         ACCESSIBILITY: SKIP LINK
+         Allows keyboard users to jump past navigation.
+    ========================================================== -->
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+
+    <!-- =========================================================
+         NAVIGATION
+         Uses the student's real SpecGateway brand mark.
+    ========================================================== -->
+    <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+        <div class="nav-container">
+
+            <a class="brand" href="index.html" aria-label="SpecGateway home">
+                <img
+                    class="brand-logo"
+                    src="assets/logo/specgateway-logo.png"
+                    alt="SpecGateway — BSE Specialisation Router"
+                >
+            </a>
+
+            <button
+                class="nav-toggle"
+                id="navToggle"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false"
+                aria-controls="navLinks"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="navLinks">
+                <a class="nav-link active" href="#gateway">Gateway</a>
+                <a class="nav-link" href="#paths">Paths</a>
+                <a class="nav-link" href="#process">How It Works</a>
+                <a class="nav-link" href="contact.html">Connect</a>
+
+                <a class="nav-cta" href="#student-entry">
+                    Begin
+                    <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <main id="mainContent">
+
+        <!-- =====================================================
+             01 — CINEMATIC VIDEO HERO
+             The uploaded MP4 fills the first viewport.
+        ====================================================== -->
+        <header class="hero" id="gateway">
+
+            <video
+                class="hero-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-hidden="true"
+            >
+                <source src="assets/video/specgateway.mp4" type="video/mp4">
+            </video>
+
+            <!-- Keeps text readable over bright parts of the clip. -->
+            <div class="hero-overlay" aria-hidden="true"></div>
+
+            <!-- Decorative Canvas. JS will render a subtle constellation. -->
+            <canvas id="heroCanvas" aria-hidden="true"></canvas>
+
+            <div class="hero-inner">
+
+                <div class="hero-kicker reveal-item">
+                    <span class="hero-index">01</span>
+                    <span>BSE SPECIALISATION ROUTER</span>
+                </div>
+
+                <h1 class="hero-title" aria-label="Four Paths. One Gateway.">
+                    <span class="hero-line reveal-item">FOUR PATHS.</span>
+                    <span class="hero-line hero-line-accent reveal-item">ONE GATEWAY.</span>
+                </h1>
+
+                <div class="hero-bottom">
+
+                    <p class="hero-copy reveal-item">
+                        Discover the BSE specialisation built around the way
+                        you think, create and solve.
+                    </p>
+
+                    <div class="hero-actions reveal-item">
+                        <a class="button button-primary" href="#student-entry">
+                            Begin your journey
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                        <a class="button button-ghost" href="#paths">
+                            Explore the paths
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Moving discipline ticker -->
+            <div class="path-marquee" aria-label="Available BSE specialisations">
+                <div class="path-marquee-track">
+                    <span>LOW-LEVEL PROGRAMMING</span>
+                    <span>◆</span>
+                    <span>AR / VR</span>
+                    <span>◆</span>
+                    <span>FULL-STACK WEB DEVELOPMENT</span>
+                    <span>◆</span>
+                    <span>MACHINE LEARNING</span>
+                    <span>◆</span>
+
+                    <!-- repeated once for seamless CSS animation -->
+                    <span aria-hidden="true">LOW-LEVEL PROGRAMMING</span>
+                    <span aria-hidden="true">◆</span>
+                    <span aria-hidden="true">AR / VR</span>
+                    <span aria-hidden="true">◆</span>
+                    <span aria-hidden="true">FULL-STACK WEB DEVELOPMENT</span>
+                    <span aria-hidden="true">◆</span>
+                    <span aria-hidden="true">MACHINE LEARNING</span>
+                    <span aria-hidden="true">◆</span>
+                </div>
+            </div>
+
+            <a class="scroll-cue" href="#intro" aria-label="Scroll to introduction">
+                <span>SCROLL TO DISCOVER</span>
+                <span class="scroll-line" aria-hidden="true"></span>
+            </a>
+
+        </header>
+
+
+        <!-- =====================================================
+             02 — EDITORIAL INTRO + PSEUDO-3D GATEWAY
+        ====================================================== -->
+        <section class="editorial-intro section-pad" id="intro">
+
+            <div class="section-number reveal-on-scroll">02 / YOUR GATEWAY</div>
+
+            <div class="intro-layout">
+
+                <div class="intro-copy reveal-on-scroll">
+                    <p class="eyebrow">BUILT FOR INCOMING BSE STUDENTS</p>
+
+                    <h2>
+                        Your strongest path is not always
+                        <em>the most obvious one.</em>
+                    </h2>
+
+                    <p class="lead-copy">
+                        SpecGateway reads patterns across your interests,
+                        problem-solving instincts and the kind of work that
+                        keeps you curious. The goal is reflection — not putting
+                        you inside a box.
+                    </p>
+                </div>
+
+
+                <!--
+                    Pseudo-3D portal:
+                    JavaScript will rotate the whole scene slightly with
+                    pointer movement. No third-party 3D library is required.
+                -->
+                <div class="gateway-stage reveal-on-scroll" id="gatewayStage">
+                    <div class="gateway-scene" id="gatewayScene" aria-hidden="true">
+
+                        <div class="gateway-orbit orbit-one"></div>
+                        <div class="gateway-orbit orbit-two"></div>
+                        <div class="gateway-orbit orbit-three"></div>
+
+                        <div class="gateway-core">
+                            <span>SG</span>
+                        </div>
+
+                        <span class="gateway-label label-top">MACHINE LEARNING</span>
+                        <span class="gateway-label label-right">FULL-STACK</span>
+                        <span class="gateway-label label-bottom">AR / VR</span>
+                        <span class="gateway-label label-left">LOW-LEVEL</span>
+
+                    </div>
+
+                    <p class="gateway-note">
+                        Move your cursor around the gateway.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             03 — FOUR PATHS
+             Large editorial panels instead of small dashboard cards.
+        ====================================================== -->
+        <section class="pathways" id="paths">
+
+            <div class="pathways-heading section-pad">
+                <div class="section-number reveal-on-scroll">03 / THE FOUR PATHS</div>
+
+                <div class="pathways-title-row reveal-on-scroll">
+                    <h2>WHERE DO YOU<br>BUILD BEST?</h2>
+                    <p>
+                        Each path rewards a different mix of curiosity,
+                        precision, creativity and systems thinking.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- PATH 01 -->
+            <article class="path-panel path-lowlevel">
+                <div class="path-visual" aria-hidden="true">
+                    <div class="visual-code-field">
+                        <span>0x7F</span>
+                        <span>101101</span>
+                        <span>MEM</span>
+                        <span>CPU</span>
+                        <span>0x2A</span>
+                    </div>
+                </div>
+
+                <div class="path-content">
+                    <span class="path-index">01</span>
+                    <p class="path-category">SYSTEMS / PERFORMANCE</p>
+
+                    <h3>LOW-LEVEL<br>PROGRAMMING</h3>
+
+                    <p>
+                        For minds drawn to what happens beneath the interface:
+                        memory, processors, operating systems, hardware and
+                        code that needs to be exact.
+                    </p>
+
+                    <ul class="path-keywords" aria-label="Low-Level Programming keywords">
+                        <li>Memory</li>
+                        <li>Efficiency</li>
+                        <li>Hardware</li>
+                        <li>Precision</li>
+                    </ul>
+                </div>
+            </article>
+
+
+            <!-- PATH 02 -->
+            <article class="path-panel path-arvr path-reversed">
+                <div class="path-visual" aria-hidden="true">
+                    <div class="visual-xr-space">
+                        <span class="xr-ring xr-ring-one"></span>
+                        <span class="xr-ring xr-ring-two"></span>
+                        <span class="xr-dot"></span>
+                    </div>
+                </div>
+
+                <div class="path-content">
+                    <span class="path-index">02</span>
+                    <p class="path-category">SPACE / INTERACTION</p>
+
+                    <h3>AR / VR</h3>
+
+                    <p>
+                        For creators who naturally think beyond a flat screen
+                        and enjoy designing spaces, movement, interaction and
+                        immersive experiences.
+                    </p>
+
+                    <ul class="path-keywords" aria-label="AR/VR keywords">
+                        <li>Spatial</li>
+                        <li>Presence</li>
+                        <li>3D</li>
+                        <li>Experience</li>
+                    </ul>
+                </div>
+            </article>
+
+
+            <!-- PATH 03 -->
+            <article class="path-panel path-fullstack">
+                <div class="path-visual" aria-hidden="true">
+                    <div class="visual-browser">
+                        <div class="browser-top">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="browser-grid">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="path-content">
+                    <span class="path-index">03</span>
+                    <p class="path-category">PRODUCT / WEB</p>
+
+                    <h3>FULL-STACK<br>WEB DEVELOPMENT</h3>
+
+                    <p>
+                        For builders who like connecting the whole experience:
+                        interfaces, APIs, databases, user journeys and turning
+                        an idea into a working product.
+                    </p>
+
+                    <ul class="path-keywords" aria-label="Full-Stack keywords">
+                        <li>Users</li>
+                        <li>Interfaces</li>
+                        <li>APIs</li>
+                        <li>Deployment</li>
+                    </ul>
+                </div>
+            </article>
+
+
+            <!-- PATH 04 -->
+            <article class="path-panel path-ml path-reversed">
+                <div class="path-visual" aria-hidden="true">
+                    <div class="visual-network">
+                        <span class="node n1"></span>
+                        <span class="node n2"></span>
+                        <span class="node n3"></span>
+                        <span class="node n4"></span>
+                        <span class="node n5"></span>
+                        <span class="network-line l1"></span>
+                        <span class="network-line l2"></span>
+                        <span class="network-line l3"></span>
+                        <span class="network-line l4"></span>
+                    </div>
+                </div>
+
+                <div class="path-content">
+                    <span class="path-index">04</span>
+                    <p class="path-category">DATA / PATTERNS</p>
+
+                    <h3>MACHINE<br>LEARNING</h3>
+
+                    <p>
+                        For analytical minds fascinated by patterns, evidence,
+                        intelligent systems and teaching computers to make
+                        useful predictions from data.
+                    </p>
+
+                    <ul class="path-keywords" aria-label="Machine Learning keywords">
+                        <li>Patterns</li>
+                        <li>Data</li>
+                        <li>Models</li>
+                        <li>Prediction</li>
+                    </ul>
+                </div>
+            </article>
+
+        </section>
+
+
+        <!-- =====================================================
+             04 — HOW SPECGATEWAY WORKS
+        ====================================================== -->
+        <section class="process section-pad" id="process">
+
+            <div class="section-number reveal-on-scroll">04 / HOW IT WORKS</div>
+
+            <div class="process-heading reveal-on-scroll">
+                <h2>NOT A CAREER TEST.<br>A THINKING-PATTERN CHECK.</h2>
+            </div>
+
+            <div class="process-grid">
+
+                <article class="process-item reveal-on-scroll">
+                    <span>01</span>
+                    <h3>ENTER</h3>
+                    <p>
+                        Add your student details using live validated fields.
+                        Your information stays in your browser.
+                    </p>
+                </article>
+
+                <article class="process-item reveal-on-scroll">
+                    <span>02</span>
+                    <h3>EXPLORE</h3>
+                    <p>
+                        Work through ten interactive questions, including
+                        visual and video-based decisions.
+                    </p>
+                </article>
+
+                <article class="process-item reveal-on-scroll">
+                    <span>03</span>
+                    <h3>MAP</h3>
+                    <p>
+                        JavaScript scores all four pathways instead of reducing
+                        your profile to a single yes/no choice.
+                    </p>
+                </article>
+
+                <article class="process-item reveal-on-scroll">
+                    <span>04</span>
+                    <h3>OPEN</h3>
+                    <p>
+                        Receive your strongest pathway, reasoning, next steps
+                        and an animated Canvas result profile.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             05 — STUDENT ENTRY FORM
+             Required preliminary details + inline validation.
+        ====================================================== -->
+        <section class="student-entry section-pad" id="student-entry">
+
+            <div class="entry-layout">
+
+                <div class="entry-copy reveal-on-scroll">
+                    <div class="section-number">05 / BEFORE YOU ENTER</div>
+
+                    <h2>
+                        READY TO OPEN<br>
+                        <em>YOUR GATEWAY?</em>
+                    </h2>
+
+                    <p>
+                        Tell us who is taking the assessment. These details are
+                        used only to personalise your experience in this browser.
+                    </p>
+
+                    <div class="entry-meta">
+                        <span>10 QUESTIONS</span>
+                        <span>10 MINUTES</span>
+                        <span>4 PATHWAYS</span>
+                        <span>1 PERSONAL PROFILE</span>
+                    </div>
+                </div>
+
+
+                <form
+                    class="student-form reveal-on-scroll"
+                    id="studentForm"
+                    novalidate
+                >
+                    <!-- FULL NAME -->
+                    <div class="field-group">
+                        <label for="studentName">Full name</label>
+
+                        <input
+                            id="studentName"
+                            name="studentName"
+                            type="text"
+                            autocomplete="name"
+                            placeholder="e.g. Alex Morgan"
+                            required
+                            aria-describedby="studentNameError"
+                        >
+
+                        <small
+                            class="error-message"
+                            id="studentNameError"
+                            aria-live="polite"
+                        ></small>
+                    </div>
+
+
+                    <!-- STUDENT ID -->
+                    <div class="field-group">
+                        <label for="studentId">Student ID</label>
+
+                        <input
+                            id="studentId"
+                            name="studentId"
+                            type="text"
+                            inputmode="numeric"
+                            maxlength="10"
+                            placeholder="e.g. 1403166999"
+                            required
+                            aria-describedby="studentIdError"
+                        >
+
+                        <small
+                            class="error-message"
+                            id="studentIdError"
+                            aria-live="polite"
+                        ></small>
+                    </div>
+
+
+                    <!-- INSTITUTIONAL EMAIL -->
+                    <div class="field-group">
+                        <label for="studentEmail">ALU email</label>
+
+                        <input
+                            id="studentEmail"
+                            name="studentEmail"
+                            type="email"
+                            autocomplete="email"
+                            placeholder="name@alustudent.com"
+                            required
+                            aria-describedby="studentEmailError"
+                        >
+
+                        <small
+                            class="error-message"
+                            id="studentEmailError"
+                            aria-live="polite"
+                        ></small>
+                    </div>
+
+
+                    <!-- YEAR OF STUDY -->
+                    <div class="field-group">
+                        <label for="studyYear">Year of study</label>
+
+                        <select
+                            id="studyYear"
+                            name="studyYear"
+                            required
+                            aria-describedby="studyYearError"
+                        >
+                            <option value="">Choose your year</option>
+                            <option value="1">Year 1</option>
+                            <option value="2">Year 2</option>
+                            <option value="3">Year 3</option>
+                            <option value="4">Year 4</option>
+                        </select>
+
+                        <small
+                            class="error-message"
+                            id="studyYearError"
+                            aria-live="polite"
+                        ></small>
+                    </div>
+
+
+                    <div class="form-consent">
+                        <input
+                            id="reflectionConsent"
+                            name="reflectionConsent"
+                            type="checkbox"
+                            required
+                        >
+
+                        <label for="reflectionConsent">
+                            I understand that SpecGateway is a reflection tool,
+                            not a final academic placement decision.
+                        </label>
+                    </div>
+
+                    <small
+                        class="error-message consent-error"
+                        id="reflectionConsentError"
+                        aria-live="polite"
+                    ></small>
+
+
+                    <button class="button button-primary form-submit" type="submit">
+                        Enter the assessment
+                        <span aria-hidden="true">↗</span>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             06 — FINAL CINEMATIC CTA
+        ====================================================== -->
+        <section class="final-cta">
+
+            <div class="final-cta-background" aria-hidden="true">
+                <span class="giant-s">S</span>
+                <span class="giant-g">G</span>
+            </div>
+
+            <div class="final-cta-inner reveal-on-scroll">
+                <span class="section-number">06 / SPEC GATEWAY</span>
+
+                <h2>WHERE DOES<br>YOUR MIND<br><em>BUILD BEST?</em></h2>
+
+                <a class="button button-light" href="#student-entry">
+                    Open your gateway
+                    <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+    <footer class="main-footer">
+
+        <div class="footer-brand-lockup">
+            <img
+                src="assets/logo/specgateway-logo.png"
+                alt="SpecGateway — BSE Specialisation Router"
+            >
+        </div>
+
+        <div class="footer-columns">
+
+            <div>
+                <p class="footer-label">PROJECT</p>
+                <p>
+                    An interactive BSE Specialisation Advisor for incoming
+                    software engineering students.
+                </p>
+            </div>
+
+            <nav aria-label="Footer navigation">
+                <p class="footer-label">NAVIGATE</p>
+                <a href="#gateway">Gateway</a>
+                <a href="#paths">Paths</a>
+                <a href="quiz.html">Assessment</a>
+                <a href="contact.html">Connect</a>
+            </nav>
+
+            <div>
+                <p class="footer-label">SPECIALISATIONS</p>
+                <p>Low-Level Programming</p>
+                <p>AR / VR</p>
+                <p>Full-Stack Web Development</p>
+                <p>Machine Learning</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 SpecGateway</span>
+            <span>BSE SPECIALISATION ROUTER</span>
+        </div>
+
+    </footer>
+
+
+    <!-- Main project JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
